@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form>
+    <table>
+        <tr>
+            <td>Mã nhân viên:</td>
+            <td><input type="text" /></td>
+        </tr>
+        <tr>
+            <td>Họ tên:</td>
+            <td><input type="text" /></td>
+        </tr>
+        <tr>
+            <td>Ngày sinh:</td>
+            <td><input type="text" /></td>
+        </tr>
+        <tr>
+            <td>Giới tính:</td>
+            <td>
+                <input type="radio" id="nam" name="sex" value="Nam"/>Nam
+                <input type="radio" id="nu" name="sex" value="Nữ"/>Nữ
+            </td>
+            
+        </tr>
+        <tr>
+            <td>Chức vụ</td>
+            <td>
+                <input list="lst"/>
+                <datalist id="lst">
+         
+                    <option value="Học sinh" ></option>
+                    <option value="Sinh Viên"></option>
+                </datalist>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>Ngôn ngữ</td>
+            <td>
+                <input type="checkbox" name="lg1" id="anh" value="Anh" />Anh
+                <input type="checkbox" name="lg1" id="phap" value="Pháp" />Pháp
+                <input type="checkbox" name="lg1" id="nga" value="Nga" />Nga
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button>Lưu</button>
+                <button>Xóa</button>
+            </td>
+        </tr>
+    </table>
+</form>
+

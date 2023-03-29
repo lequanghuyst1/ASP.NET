@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "HienThi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .output_money {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    table {
+        border-radius: 10px;
+        width: 50%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 8px 8px;
+        font-size: 16px;
+    }
+</style>
+<h2>HienThi</h2>
+<div class="output_money">
+    <table>
+        <tr>
+            <td>Mã NV:</td>
+            <td>
+                <input type="text" name="" value="@ViewBag.maNV">
+            </td>
+        </tr>
+        <tr>
+            <td>Có ngày công</td>
+            <td>
+                <input type="text" name="" id="" value="@ViewBag.ngayCong">
+            </td>
+        </tr>
+        <tr>
+            <td>Tiền được lĩnh là</td>
+            <td>@ViewBag.tienLinh</td>
+        </tr>
+    </table>
+</div>

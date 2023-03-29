@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Student Detail</h2>
+
+<ul>
+    @*<li>ID: @ViewBag.id</li>
+    <li>Name: @ViewBag.name</li>
+    <li>Mark: @ViewBag.mark</li>*@
+
+
+    @*<li>ID: @Model.id</li>
+    <li>Name: @Model.name</li>
+    <li>Mark: @Model.mark</li>*@
+
+</ul>
+<div>
+    <form action="~/NhapDiemController/Xuly" method="post">
+        @*<label>Nhập mã sv</label><br />
+        <input type="text" name="Id" /><br />
+        <label>Nhập họ tên</label><br />
+        <input type="text" name="Name" /><br />
+        <label>Nhập điểm</label><br />
+        <input type="text" name="Mark" /><br /><br />
+        <input type="submit" value="Gửi" />*@
+
+        Nhập a: <input type="text" name="soa" /><br />
+        Nhập b: <input type="text" name="sob" /><br />
+        <input type="radio" value="Cộng" name="cala" />Cộng
+        <input type="radio" value="Trừ" name="cala" />Trừ
+        <input type="radio" value="Nhân" name="cala" />Nhân
+        <input type="radio" value="Chia" name="cala" />Chia
+        <br />
+        <input type="submit" value="Tính"/>
+    </form>
+    
+</div>
+

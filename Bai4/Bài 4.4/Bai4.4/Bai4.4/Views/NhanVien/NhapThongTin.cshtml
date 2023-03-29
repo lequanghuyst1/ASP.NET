@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "NhapThongTin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NhapThongTin</h2>
+
+<style>
+    .input_employee{
+        display:flex;
+        align-content:center;
+        justify-content:center;
+    }
+    table, th, td {
+        border:1px solid black;
+        border-collapse:collapse;
+        
+    }
+    table {
+        border-radius: 10px;
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 8px 8px;
+        font-size: 16px;
+    }
+</style>
+
+<div class="input_employee">
+    <form style="width:50%" action="~/NhanVien/HienThi" method="post">
+        <table>
+            <tr>
+                <td>Mã NV:</td>
+                <td>
+                    <input type="text" name="MaNV">
+                </td>
+            </tr>
+            <tr>
+                <td>Bậc lương:</td>
+                <td>
+                    <input type="text" name="BacLuong">
+                </td>
+            </tr>
+            <tr>
+                <td>Ngày công:</td>
+                <td>
+                    <input type="text" name="NgayCong">
+                </td>
+            </tr>
+            <tr>
+                <td>Chức vụ:</td>
+                <td>
+                    <select name="ChucVu" id="">
+                        <option value="Trưởng phòng">Trường phòng</option>
+                        <option value="Phó phòng">Phó phòng</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Giới Tính:</td>
+                <td>
+                    <input type="radio" name="gender" value="Nam">Nam
+                    <input type="radio" name="gender" value="Nữ">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>Ngoại ngữ:</td>
+                <td>
+                    <input type="checkbox" name="language" value="Anh">Anh
+                    <input type="checkbox" name="language" value="Pháp">Pháp
+                    <input type="checkbox" name="language" value="Nga">Nga
+
+                </td>
+            </tr>
+            <tr>
+                <td>Tiền lĩnh:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button value="Tính">Tính</button>
+                    <button value="Xóa">Xóa</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

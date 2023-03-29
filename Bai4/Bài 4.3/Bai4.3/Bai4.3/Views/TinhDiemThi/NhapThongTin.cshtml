@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "NhapThongTin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .nhapdiemthi {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    table {
+        border-radius: 10px;
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 8px 8px;
+        font-size: 16px;
+    }
+</style>
+
+<h2>NhapThongTin</h2>
+
+<div class="nhapdiemthi">
+    <form style="width:50%" action="~/TinhDiemThi/HienThi" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3"><h3 style="text-align:center">Nhập điểm thi</h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Họ tên thí sinh:</td>
+                    <td><input type="text" name="txtHoTen" value="" /></td>
+                    <td><input type="checkbox" value="true" name="check_ho" />Gia đình chính</td>
+                </tr>
+                <tr>
+                    <td>Chọn khu vực:</td>
+                    <td colspan="2">
+                        <select name="khuvuc">
+                            <option value="Khu A">Khu A</option>
+                            <option value="Khu B">Khu B</option>
+                            <option value="Khu C">Khu C</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vào điểm toán:</td>
+                    <td colspan="2">
+                        <input type="text" name="DiemToan">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vào điểm lý:</td>
+                    <td colspan="2">
+                        <input type="text" name="DiemLy">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vào điểm hóa:</td>
+                    <td colspan="2">
+                        <input type="text" name="DiemHoa">
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td style="text-align:center" colspan="3">
+                        <input type="submit" value="Tính" />
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>

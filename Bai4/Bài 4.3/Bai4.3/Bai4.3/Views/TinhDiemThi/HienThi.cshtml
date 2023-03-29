@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "HienThi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .xuatdiemthi {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    table {
+        border-radius: 10px;
+        width: 50%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 8px 8px;
+        font-size: 16px;
+    }
+</style>
+
+<h2>HienThi</h2>
+<div class="xuatdiemthi">
+    <table>
+        <tr>
+            <td>Họ tên thí sinh:</td>
+            <td>
+                <input type="text" name="txthoten" value="@ViewBag.hoten">
+            </td>
+        </tr>
+        <tr>
+            <td>Tổng điểm:</td>
+            <td>
+                <input type="text" name="txttongdiem" value="@ViewBag.tongdiem">
+            </td>
+        </tr>
+        <tr>
+            <td>Kết quả:</td>
+            <td>
+                <input type="text" name="txtketqua" value="@ViewBag.ketqua">
+            </td>
+        </tr>
+    </table>
+</div>
