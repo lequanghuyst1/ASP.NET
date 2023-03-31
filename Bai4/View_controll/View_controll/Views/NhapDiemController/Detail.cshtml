@@ -18,7 +18,7 @@
 
 </ul>
 <div>
-    <form action="~/NhapDiemController/Xuly" method="post">
+    <form method="post">
         @*<label>Nhập mã sv</label><br />
         <input type="text" name="Id" /><br />
         <label>Nhập họ tên</label><br />
@@ -35,6 +35,7 @@
         <input type="radio" value="Chia" name="cala" />Chia
         <br />
         <input type="submit" value="Tính"/>
+        <div>@ViewBag.kq</div>
     </form>
     
 </div>

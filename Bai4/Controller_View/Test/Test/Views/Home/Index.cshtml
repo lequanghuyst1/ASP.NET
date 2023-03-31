@@ -1,0 +1,70 @@
+﻿
+@using Test.Models;
+@{
+    ViewBag.Title = "Index";
+    List<Student> lst = ViewBag.lst;
+}
+<style>
+    table,th,td{
+        border:1px solid black;
+        border-collapse:collapse;
+    }
+    th, td{
+        padding:5px;
+    }
+</style>
+@*<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaSV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QueQuan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QueQuan)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>*@
+
+<table width="400px">
+    <tr>
+        <th>Mã sinh viên</th>
+        <th>Họ tên</th>
+        <th>Quê Quán</th>
+    </tr>
+    @foreach(var item in lst)
+            {
+                <tr>
+                    <td>@item.MaSV</td>
+                    <td>@item.HoTen</td>
+                    <td>@item.QueQuan</td>
+                </tr>
+            }
+</table>

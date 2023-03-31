@@ -1,0 +1,36 @@
+﻿@model Test.Models.Course_Student
+
+@{
+    ViewBag.Title = "Contact";
+}
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+</style>
+<h2>Contact</h2>
+
+<div>
+
+    <div>@Model.cs.CourseID</div>
+    <div>@Model.cs.CourseName</div>
+    <table width="400px">
+        @foreach (var item in Model.lst)
+        {
+            <tr>
+                <td>@item.MaSV</td>
+                <td>@item.HoTen</td>
+                <td>@item.QueQuan</td>
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

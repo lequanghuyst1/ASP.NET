@@ -43,6 +43,26 @@ namespace View_controll.Controllers
 
         public ActionResult Detail()
         {
+            int a = int.Parse(Request["soa"]);
+            int b = int.Parse(Request["sob"]);
+            String cal = Request["cala"];
+            ViewBag.c = cal;
+            if (cal == "Cộng")
+            {
+                ViewBag.kq = a + b;
+            }
+            else if (cal == "Trừ")
+            {
+                ViewBag.kq = a - b;
+            }
+            else if (cal == "Nhân")
+            {
+                ViewBag.kq = a * b;
+            }
+            else if (cal == "Chia")
+            {
+                ViewBag.kq = (float)a / b;
+            }
             return View();
         }
         /*public ActionResult Xuly()
