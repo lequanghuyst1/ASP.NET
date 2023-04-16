@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+
+
+}
+<style>
+    label{
+        min-width:120px;
+        padding-left:10px;
+        
+    }
+    tr,td{
+        padding:5px 0;
+    }
+</style>
+<div style="display:flex;justify-content:center;">
+    <div style="width: 400px; background-color: #f3edb9 ">
+        @using (Html.BeginForm("Regis", "Home")) { 
+            <table border="1" style="width:100%">
+                <tr>
+                    <td><h2>Registration Form</h2></td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("First Name")
+                        @Html.TextBox("FirstName", "", new { type = "text" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Last Name")
+                        @Html.TextBox("LastName", "", new { type = "text" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Email")
+                        @Html.TextBox("Email", "", new { type = "text" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Password")
+                        @Html.TextBox("Password", "", new { type = "text" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("City")
+                        @{
+                            IEnumerable<string> lst = new List<string> { "Hà nội", "Đà Nẵng", "Gia Lai" };
+
+                        }
+                        @Html.DropDownList("lst", new SelectList(lst, lst.FirstOrDefault()))
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Gender")
+                        @Html.RadioButton("Gender", "Male")Male
+                        @Html.RadioButton("Gender", "Female")Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Save" />
+                        <input type="submit" value="Cancel" />
+
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</div>

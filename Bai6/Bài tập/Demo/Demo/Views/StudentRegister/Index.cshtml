@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    table {
+        margin-top: 20px;
+        width: 400px;
+    }
+
+    td {
+        padding: 5px;
+    }
+</style>
+@using (Html.BeginForm("Regis", "StudentRegister"))
+{
+    <table border="1" cellpadding="5">
+        <tr>
+            <td>@Html.Label("Student Name")</td>
+            <td>@Html.TextBox("Name", "", new { @class = "form-controll" })</td>
+        </tr>
+        <tr>
+        <tr>
+            <td>@Html.Label("Gender")</td>
+            <td>
+                @Html.RadioButton("Gender", "Male", new { id = "Male" })Male
+                @Html.RadioButton("Gender", "Female", new { id = "Female" })Female
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Email")</td>
+            <td>@Html.TextBox("Email", "", new { type = "email" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Address")</td>
+            <td>
+                @{
+                    IEnumerable<string> list = new List<string> { "Hanoi", "DaNang", "Tp.HCM" };
+                }
+                @Html.DropDownList("Address", new SelectList(list, list.FirstOrDefault()), "--Select--")
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Subjects")</td>
+            <td>
+                @Html.CheckBox("Java Core")Java Core
+                @Html.CheckBox("SQL Sever")SQL Sever
+                @Html.CheckBox("PHP")PHP
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Username")</td>
+            <td>@Html.TextBox("Username", "", new { type = "text" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Password")</td>
+            <td>@Html.TextBox("Password", "", new { type = "password" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Comment")</td>
+            <td>@Html.TextArea("Comment", "", new { rows = 2, cols = 20 })</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBox("btn_Register", "Regis", new { type = "submit" })</td>
+            <td>@Html.TextBox("btn_Cancel", "Cancel", new { type = "submit" })</td>
+
+        </tr>
+    </table>
+}
+

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Send email </h2>
+<form action="/SendMail/Send" method="post" enctype="multipart/form-data">
+    <div>
+        From:<br />
+        <input type="email" name="mailFrom" />
+    </div>
+    <div>
+        Password:<br />
+        <input type="password" name="password" />
+    </div>
+    <div>
+        To:<br />
+        <input type="email" name="mailTo" />
+    </div>
+    <div>
+        Subject:<br />
+        <input type="text" name="subject" />
+    </div>
+
+    <div>
+        Body: <br />
+        <textarea name="message" rows="5" cols="40"></textarea>
+    </div>
+    <div>
+        <input type="submit" name="" value="Send" />
+    </div>
+    <div>@ViewBag.HanhDong</div>
+    <div>
+        Email From:@ViewBag.mailFrom<br />
+        Password: @ViewBag.password<br />
+        Email To: @ViewBag.mailTo<br />
+        Subject: @ViewBag.subject<br />
+        Messages: @ViewBag.message<br />
+    </div>
+</form>
+

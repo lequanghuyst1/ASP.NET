@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    var so1 = Request["txtSo1"];
+    var so2  = Request["txtSo2"];
+    var total = 0;
+    if(Request["Calcu"] == "Cộng") {
+        total = so1.AsInt() + so2.AsInt();
+    }
+    else if (Request["Calcu"] == "Trừ")
+    {
+        total = so1.AsInt() - so2.AsInt();
+    }
+    else if (Request["Calcu"] == "Nhân")
+    {
+        total = so1.AsInt() * so2.AsInt();
+    }
+    else if (Request["Calcu"] == "Chia")
+    {
+        total = so1.AsInt() / so2.AsInt();
+    }
+}
+<style>
+    label{
+        min-width:150px;
+        
+    }
+    .container_{
+        display:flex;
+        justify-content:center;
+    }
+    .main {
+        margin-top: 20px;
+        width: 500px;
+        padding: 40px 20px;
+        border: 1px solid;
+    }
+    button {
+        width: 65px;
+        padding: 6px;
+        border-radius: 6px;
+        background-color: #3e37378f;
+    }
+</style>
+<div class="container_">
+    <div class="main">
+        @using (Html.BeginForm("Index", "Home"))
+        {
+            @Html.Label("Nhập số thứ nhất")
+            @Html.TextBox("txtSo1", @so1, new { type = "text" })
+            <br />
+            @Html.Label("Nhập số thứ hai")
+            @Html.TextBox("txtSo2", @so2, new { type = "text" })
+            <br />
+            @Html.Label("Kết quả")
+            @Html.TextBox("ketqua", @total, new { type = "text" })
+            <br />
+            <div class="list_button" style="margin-top:30px;text-align:center;">
+                <button name="calcu" value="Cộng">Cộng</button>
+                <button name="calcu" value="Trừ">Trừ</button>
+                <button name="calcu" value="Nhân">Nhân</button>
+                <button name="calcu" value="Chia">Chia</button>
+            </div>
+
+        }
+    </div>
+</div>

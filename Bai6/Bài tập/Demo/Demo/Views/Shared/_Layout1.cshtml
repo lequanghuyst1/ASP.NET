@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+    @Styles.Render("~/Content/Style.css")
+</head>
+<body>
+    <div class="gird container">
+        <div class="header">
+            <h1>Ha Noi University Of Industry</h1>
+        </div>
+        <div class="main_content">
+            <div class="navbar">
+                @Html.ActionLink("Giới thiệu", "GioiThieu", "fit")<br />
+                @Html.ActionLink("Tuyển sinh", "TuyenSinh", "fit")<br />
+                @Html.ActionLink("Đào tạo", "DaoTao", "fit")<br />
+            </div>
+            <div class="content">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="footer">
+            <footer>Lê Quang Huy_2020600461_Lop:20222IT6021001</footer>
+        </div>
+    </div>
+</body>
+</html>

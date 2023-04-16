@@ -1,0 +1,28 @@
+﻿@model Demo.Models.SinhVien
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div>
+        @Html.Label("Mã SV")
+    </div>
+    @Html.TextBox("ID", "", new { @class = "form-controll_ID" })
+    <div>
+        @Html.Label("Họ tên")
+    </div>
+    @Html.TextBox("Name", "", new { @class = "form-controll_name" })
+    <div>
+        @Html.Label("Điểm")
+    </div>
+    @Html.TextBox("Mark", "", new { @class = "form-controll_mark" })
+    <div style="margin-top:10px">
+        <button formaction="/Home/Save">Save</button>
+        <button formaction="/Home/Open">Open</button>
+    </div>
+    <div>@ViewBag.HanhDong</div>
+    <div>@ViewBag.ThongTin</div>
+}
+

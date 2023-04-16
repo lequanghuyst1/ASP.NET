@@ -17,7 +17,7 @@ namespace Test.Controllers
             li.Add(new Student("SV02", "Lê Thanh Hải", "Hà Nội"));
             li.Add(new Student("SV03", "Lê Tuấn Kiệt", "Hà Nội"));
             ViewBag.lst = li;
-            return View();
+            return View(li);
         }
 
         public ActionResult About()
