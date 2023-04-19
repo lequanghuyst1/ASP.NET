@@ -1,0 +1,20 @@
+﻿@model Test3.Models.Student
+@{
+    ViewBag.Title = "DisplayAList";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>DisplayAList</h2>
+
+<table>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.SID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Age</td>
+                    <td>@item.Address</td>
+
+                </tr>
+            }
+</table>

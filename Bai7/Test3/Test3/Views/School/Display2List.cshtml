@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Display2List";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    List<Test3.Models.Student> ls1 = ViewBag.lst1;
+    List<Test3.Models.Student> ls2 = ViewBag.lst2;
+
+}
+
+<h2>Display2List</h2>
+
+<table>
+    @foreach (var item in ls1)
+    {
+        <tr>
+            <td>@item.SID</td>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.Address</td>
+        </tr>
+    }
+    @foreach (var item in ls2)
+    {
+        <tr>
+            <td>@item.SID</td>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.Address</td>
+        </tr>
+    }
+</table>

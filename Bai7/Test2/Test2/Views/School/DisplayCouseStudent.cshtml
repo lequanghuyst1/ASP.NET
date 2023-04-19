@@ -1,0 +1,40 @@
+﻿@model Test2.Models.StudentCourse
+@{
+    ViewBag.Title = "DisplayCouseStudent";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<style>
+    table {
+        width: 400px;
+        border-collapse: collapse;
+    }
+
+    td {
+        border: 1px solid black;
+        padding: 2px;
+    }
+</style>
+<h2>DisplayCouseStudent</h2>
+<label>Course ID: </label>
+<label>@Model.cs.CID</label>
+<br />
+
+<label>Course Name: </label>
+<label>@Model.cs.CName</label>
+<table>
+    <tr>
+        <td>SID</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Address</td>
+    </tr>
+    @foreach (var item in Model.students)
+    {
+        <tr>
+            <td>@item.SID</td>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.Address</td>
+        </tr>
+    }
+</table>

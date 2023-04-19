@@ -1,0 +1,127 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #333333;
+    background-color: #b2bfca;
+    margin: 20px;
+}
+
+.main {
+    width: 800px;
+    margin: 0px auto;
+}
+
+.page {
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 5px;
+}
+
+.header {
+    width: 100%;
+}
+
+.header_img {
+    background: #1f31bb;
+    text-align: right;
+    width: 100%;
+    height: 100px;
+    color: #FFFFFF;
+}
+
+    .header_img h1 {
+        font-size: 36px;
+        padding-top: 20px;
+        margin-right: 50px;
+        font-weight: normal;
+        line-height: 100%;
+    }
+
+    .header_img p {
+        font-size: 14px;
+        font-weight: bold;
+        color: #FFFFFF;
+        margin-top: 10px;
+        margin-right: 50px;
+    }
+
+.header_menu {
+    height: 30px;
+    background-color: #406fd6;
+    margin-top: 1px;
+    width: 100%;
+}
+
+    .header_menu ul {
+    }
+
+        .header_menu ul li {
+            display: inline-block;
+            line-height: 30px;
+            padding: 0 25px;
+        }
+
+            .header_menu ul li a {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+
+            .header_menu ul li:hover {
+                background: #7a9de9;
+            }
+
+.content {
+    display: flex;
+}
+
+.content_left {
+    flex: 1;
+    padding: 20px 50px 20px 20px;
+}
+
+.content_right {
+    width: 250px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: normal;
+    color: #1f31bb;
+    margin-top: 25px;
+    margin-bottom: 17px;
+    margin-left: 3px;
+}
+
+.nav {
+}
+
+    .nav ul {
+    }
+
+        .nav ul li {
+            list-style: none;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #CCCCCC;
+        }
+
+            .nav ul li a {
+                text-decoration: none;
+                color: #333333;
+            }
+
+.footer {
+    margin-top: 10px;
+    background-color: #c0c0c0;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #FFFFFF;
+}

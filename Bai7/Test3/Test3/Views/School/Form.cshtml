@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<style>
+    .Regis label {
+        display:inline-block;
+        min-width: 90px;
+    }
+</style>
+<h2>Đăng ký</h2>
+<div class="Regis">
+    @using (Html.BeginForm("Display", "School"))
+    {
+        @Html.Label("Nhap ID:")
+        @Html.TextBox("SID")
+        <br />
+        <br />
+        @Html.Label("Nhap Name:")
+        @Html.TextBox("Name")
+        <br />
+        <br />
+        @Html.Label("Nhap Age:")
+        @Html.TextBox("Age")
+        <br />
+        <br />
+        @Html.Label("Nhap Address:")
+        @Html.TextBox("Address")
+        <br />
+        <input type="submit" value="Regis" />
+        <input type="submit" value="Cancel" />
+
+    }
+</div>
+

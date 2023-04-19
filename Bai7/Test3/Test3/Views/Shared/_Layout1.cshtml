@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/Content/Style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="page">
+            <div class="header">
+                <div class="header_img">
+                    <h1>Faculty of IT</h1>
+                    <p>Hanoi university of industry</p>
+                </div>
+                <div class="header_nav">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Products</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_left">
+                    @RenderBody()
+                </div>
+                <div class="content_right">
+                    <h3 class="title">Categories</h3>
+                    <div class="menu_right">
+                        <ul>
+                            <li><a href="~/School/Form">Thêm 1 sinh viên</a></li>
+                            <li><a href="">Tính toán</a></li>
+                            <li><a href="~/School/DisplayAList">Xem danh dách sinh viên</a></li>
+                            <li><a href="">Xem khóa học</a></li>
+                            <li><a href="">Xem danh sách 2 sinh viên</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="title">Blogroll</h3>
+                    <div class="menu_right">
+                        <ul>
+                            <li><a href="">Link 1</a></li>
+                            <li><a href="">Link 2</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <footer>298 Cầu Diễn, Bắc Từ Liêm, Hà Nội</footer>
+        </div>
+    </div>
+</body>
+</html>

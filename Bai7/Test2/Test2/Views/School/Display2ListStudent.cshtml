@@ -1,0 +1,82 @@
+﻿
+
+@{
+    ViewBag.Title = "Display2ListStudent";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    List<Test2.Models.Student> ls1 = ViewBag.lst1;
+    List<Test2.Models.Student> ls2 = ViewBag.lst2;
+}
+<style>
+    table{
+        width:400px;
+        border-collapse:collapse;
+    }
+    td{
+        border:1px solid black;
+        padding:2px;
+    }
+</style>
+<h2>Display2ListStudent</h2>
+
+<div>
+    <h3>Danh sách sinh viên 1</h3>
+    <table>
+        <tr class="dl-horizontal">
+            <td>
+                SID
+            </td>
+
+            <td>
+                Name
+            </td>
+
+            <td>
+                Age
+            </td>
+
+            <td>
+                Address
+            </td>
+        </tr>
+        @foreach (var item in ls1)
+        {
+            <tr>
+                <td>@item.SID</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td>@item.Address</td>
+            </tr>
+        }
+    </table>
+
+    <h3>Danh sách sinh viên 2</h3>
+    <table>
+        <tr class="dl-horizontal">
+            <td>
+                SID
+            </td>
+
+            <td>
+                Name
+            </td>
+
+            <td>
+                Age
+            </td>
+
+            <td>
+                Address
+            </td>
+        </tr>
+        @foreach (var item in ls2)
+        {
+            <tr>
+                <td>@item.SID</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td>@item.Address</td>
+            </tr>
+        }
+    </table>
+</div>
+
