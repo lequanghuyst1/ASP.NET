@@ -1,0 +1,34 @@
+﻿@model WebApplication3_t5.Models.Student
+
+@{
+    ViewBag.Title = "DisplayAStudent";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+
+}
+ 
+<h2>DisplayAStudent</h2>
+<br/>
+ 
+   
+    <table border="1" width="300" style="border-collapse:collapse" cellpadding="5">
+         <tr>
+              <td width="120px">Mã sinh viên:</td>
+              <td width="180px">@Model.sid</td>
+         </tr>
+         <tr>
+              <td>Họ tên:</td>
+              <td>@Model.name</td>
+               
+         </tr>
+         <tr>
+              <td>Tuổi:</td>
+              <td>@Model.age</td>
+              </p>
+         <tr>
+              <td>Địa chỉ:</td>
+              <td>@Model.addr</td>
+         </tr>
+    </table>
+
+ 
+ 

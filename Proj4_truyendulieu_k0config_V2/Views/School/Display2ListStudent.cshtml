@@ -1,0 +1,92 @@
+﻿
+
+@{
+     ViewBag.Title = "Display2ListStudent";
+     Layout = "~/Views/Shared/_Layout2.cshtml";
+
+     List<WebApplication3_t5.Models.Student> li1 = ViewBag.li1;
+     List<WebApplication3_t5.Models.Student> li2 = ViewBag.li2;
+}
+
+<h2>Danh sách 1</h2>
+
+<table border="1" width="400" style="border-collapse:collapse" cellpadding="5">
+     <tr>
+          <th>
+               sid
+          </th>
+          <th>
+               name
+          </th>
+          <th>
+               age
+          </th>
+          <th>
+               addr
+          </th>
+
+     </tr>
+
+     @foreach (var item in li1)
+     {
+          <tr>
+               <td>
+                    @item.sid
+               </td>
+               <td>
+                    @item.name
+               </td>
+               <td>
+                    @item.age
+               </td>
+               <td>
+                    @item.addr
+               </td>
+
+          </tr>
+     }
+
+</table>
+<br />
+<h2>Danh sách 2</h2>
+
+<table border="1" width="400" style="border-collapse:collapse" cellpadding="5">
+     <tr>
+          <th>
+               sid
+          </th>
+          <th>
+               name
+          </th>
+          <th>
+               age
+          </th>
+          <th>
+               addr
+          </th>
+
+     </tr>
+
+     @foreach (var item in li2)
+     {
+          <tr>
+               <td>
+                    @item.sid
+               </td>
+               <td>
+                    @item.name
+               </td>
+               <td>
+                    @item.age
+               </td>
+               <td>
+                    @item.addr
+               </td>
+
+          </tr>
+     }
+
+</table>
+
+
+

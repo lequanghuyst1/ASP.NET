@@ -1,0 +1,104 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Layout</title>
+    <meta name="description" content="Description of your site goes here">
+    <meta name="keywords" content="keyword1, keyword2, keyword3">
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="main">
+        <div class="page">
+            <div class="header">
+                <div class="header-img">
+                    <h1>Faculty of IT</h1>
+                    <p style="margin-right:50px">Hanoi university of industry</p>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="School/Welcome">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+                <div class="left-panel">
+                    <div class="left-panel-in">
+                       @RenderBody()
+                    </div>
+                </div>
+                <!--Designed by-->
+
+                <div class="right-panel">
+                    <div class="right-panel-in">
+
+                        <h3>Categories</h3>
+                        <ul>
+                            <li>
+                                <a href="/School/Index">
+                                    Thêm 1 sinh viên<br>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/School/Tinhtoan">
+                                    Tính toán<br>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/School/DisplayListStudent">
+                                    Xem danh sách sv<br>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/School/DisplayCouseStudent">
+                                    Xem khóa học<br>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/School/Display2ListStudent">
+                                    Xem 2 danh sách sv<br>
+                                </a>
+                            </li>
+                             
+                             
+                        </ul>
+                        <h3>Blogroll</h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Blogroll link 1<br>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    Blogroll link 2<br>
+                                </a>
+                            </li>
+                           
+                            
+                        </ul>
+
+                        <p> &nbsp;</p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>
+                    298 Cầu Diễn, Bắc Từ Liêm, Hà Nội
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

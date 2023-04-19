@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebApplication3_t5.Models.Student>
+
+@{
+    ViewBag.Title = "DisplayListStudent";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+
+}
+
+<h2>Display List Student</h2>
+
+<p>
+     &nbsp;
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addr)
+        </th>
+      
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addr)
+        </td>
+        
+    </tr>
+}
+
+</table>
