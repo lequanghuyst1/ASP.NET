@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Demo.Models.tblEmployee>
+
+@{
+    ViewBag.Title = "IndexV2";
+}
+
+<h2>IndexV2</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xl-3 col-md-4 col-sm-6">
+            <div class="card table-bordered">
+                @{
+                    string path = "~/Content/Images/" + item.image;
+                }
+                <img class="card-img-top" src="@Url.Content(path)"
+                     alt="Card image" />
+                <div class="card-body">
+                    <h4 class="card-title text-center text-primary">
+                        @item.name
+                    </h4>
+                    <p class="card-text">ID: @item.eid</p>
+                    <p class="card-text">Address: @item.addr</p>
+                    <p class="card-text">Salary: @item.salary</p>
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-light">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.eid })
+                        </button>
+                        <button type="button" class="btn btn-light">
+                            @Html.ActionLink("Details", "Details", new { id = item.eid })
+                        </button>
+                        <button type="button" class="btn btn-light">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.eid })
+                        </button>
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+    }
+</div>

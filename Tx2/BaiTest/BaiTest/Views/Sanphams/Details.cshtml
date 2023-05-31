@@ -1,0 +1,63 @@
+﻿@model BaiTest.Models.Sanpham
+
+@{
+    ViewBag.Title = "Details";
+    var path = "~/Content/Images/" + Model.Mota;
+}
+
+<h2>Chi tiết sản phẩm</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên danh mục
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Danhmuc.TenDanhmuc)
+        </dd>
+
+        <dt>
+            Tên vật dụng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenvd)
+        </dd>
+
+        <dd>
+            <img src="@Url.Content(path)" width="150" class="img-thumbnail" />
+        </dd>
+
+        <dt>
+            Tên ảnh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenAnh)
+
+        </dd>
+
+        <dt>
+            Giá tiền
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giatien)
+        </dd>
+
+        <dt>
+            Số lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Mavd }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

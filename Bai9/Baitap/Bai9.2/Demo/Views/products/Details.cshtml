@@ -1,0 +1,68 @@
+﻿@model Demo.Models.product
+
+@{
+    ViewBag.Title = "Details";
+    var ImagePath = "~/Images/" + Model.image;
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.category.catname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.catname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(ImagePath)" width="100" height="100" />
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.proid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

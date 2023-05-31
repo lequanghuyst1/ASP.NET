@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WebApplication1.Models.Category>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Style.css")
+
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="">
+        <div class="">
+            <div class="header">
+                <h1>Electro<span>.</span></h1>
+                <div class="header_search">
+                    <div class="header_search--list">
+                        <select style="height:30px;width:150px;" id="cars">
+                            <option>Danh mục</option>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                    <div class="header_search--text">
+                        <input style="height:30px;min-width:400px;" type="text" placeholder="Search here" />
+                    </div>
+                    <div class="header_search--button">
+                        <input style="height:32px;" type="submit" value="Tìm kiếm" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar">
+        <ul class="">
+            <li>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
+            <li>@Html.ActionLink("Khuyến mãi", "About", "Home")</li>
+            <li>@Html.ActionLink("Sản phẩm", "Contact", "Home")</li>
+            @{ Html.RenderAction("Index2", "Categories");}
+        </ul>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

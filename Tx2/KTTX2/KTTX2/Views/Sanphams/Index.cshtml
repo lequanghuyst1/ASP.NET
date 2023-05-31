@@ -1,0 +1,44 @@
+﻿@model PagedList.IPagedList<KTTX2.Models.Sanpham>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+            {
+                <p>
+                    Tìm kiếm tên sản phẩm: @Html.TextBox("searchName", ViewBag.currentSort as string)
+                    <input type="submit" value="Tìm kiếm" />
+                </p>
+            }
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+        <a href="/shop/sanpham/@item.Mavd">
+            <div class="col-lg-3 col-sm-3 col-md-3 table-bordered text-center">
+                Tên vật dụng: <b>@Html.DisplayFor(modelItem => item.Tenvd)<br /></b>
+
+                @{ 
+                    string path = "~/Content/Images/" + item.Mota;
+                }
+                <img src="@Url.Content(path)" width="200" class="img-thumbnail" /><br />
+               @Html.ActionLink("Gía tiền", "Index", new {sortOrder = ViewBag.SapTheoGia, currentFilter = ViewBag.currentFilter }) <b>@Html.DisplayFor(modelItem => item.Giatien)<br /></b>
+
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.Mavd }) |
+                
+                @Html.ActionLink("Delete", "Delete", new { id = item.Mavd })
+            </div>
+        </a>
+
+
+    }
+</div>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new {page, sortOrder = ViewBag.currentSort, currentFilter = ViewBag.currentFilter }))

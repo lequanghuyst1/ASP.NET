@@ -1,0 +1,113 @@
+﻿@model PagedList.IPagedList<BaiTest.Models.Sanpham>
+@using PagedList.Mvc
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    p {
+        display: inline-block;
+        padding-top: 10px !important;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    <p>
+        Tìm tên mặt hàng @Html.TextBox("searchName", ViewBag.CurrentSort as string)
+        <input type="submit" value="Tìm kiếm" />
+    </p>
+}
+@using (Html.BeginForm())
+{
+    <p>
+        Tìm giá mặt hàng @Html.TextBox("searchPrice", ViewBag.CurrentSort as string)
+        <input type="submit" value="Tìm kiếm" />
+    </p>
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table class="table table-bordered">
+        <tr>
+            <th>
+                Tên danh mục
+            </th>
+            <th>
+                Tên vật dụng
+            </th>
+            <th>
+                Mô tả
+            </th>
+            <th>
+                Tên ảnh
+            </th>
+            <th>
+                @Html.ActionLink("Giá", "Index", new { sort = ViewBag.SapTheoGia, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                Số lượng
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+           <tr>
+               <td>
+                   @Html.DisplayFor(modelItem => item.Danhmuc.TenDanhmuc)
+               </td>
+               <td>
+                   @Html.DisplayFor(modelItem => item.Tenvd)
+               </td>
+               <td>
+                   @{
+                       var path = "~/Content/Images/" + item.Mota;
+                   }
+                   <img class="img-thumbnail" src="@Url.Content(path)" width="150" height="200" />
+               </td>
+               <td>
+                   @Html.DisplayFor(modelItem => item.TenAnh)
+               </td>
+               <td>
+                   @Html.DisplayFor(modelItem => item.Giatien)
+               </td>
+               <td>
+                   @Html.DisplayFor(modelItem => item.Soluong)
+               </td>
+               <td>
+                   @Html.ActionLink("Edit", "Edit", new { id = item.Mavd }) |
+                   @Html.ActionLink("Details", "Details", new { id = item.Mavd }) |
+                   @Html.ActionLink("Delete", "Delete", new { id = item.Mavd })
+               </td>
+           </tr>
+        }
+
+    </table>
+*@
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <a href="/shop/sanpham/@item.Mavd">
+            <div class="col-sm-3 col-lg-3 col-md-3 table-bordered text-center">
+
+                <p style="padding-top:5px">Tên vật dụng: <b>@item.Tenvd<br /></b></p>
+                @{
+                    string path = "~/Content/Images/" + item.Mota;
+                }
+                <img src="@Url.Content(path)" width="150" /><br />
+                @Html.ActionLink("Giá", "Index", new { sort = ViewBag.SapTheoGia, currentFilter = ViewBag.CurrentFilter }) <b>@item.Giatien</b> <br />
+                @Html.ActionLink("Edit", "Edit", new { id = item.Mavd }) |
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.Mavd })
+            </div>
+        </a>
+
+    }
+
+
+</div>
+
+<br />
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sort = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
